@@ -12,7 +12,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/users");
+        const response = await fetch("https://admin-dashboard-backend-1sc0.onrender.com/api/users");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

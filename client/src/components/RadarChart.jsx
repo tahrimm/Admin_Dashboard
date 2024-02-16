@@ -10,7 +10,7 @@ const RadarChartComponent = () => {
 
     const fetchDataFromAPI = async () => {
         try {
-            const response = await fetch("http://localhost:5001/api/users"); 
+            const response = await fetch("https://admin-dashboard-backend-1sc0.onrender.com/api/users"); 
             const jsonData = await response.json();
             processData(jsonData);
         } catch (error) {
@@ -40,6 +40,7 @@ const RadarChartComponent = () => {
 
         setRadarData(sortedData);
     };
+    
 
     return (
         <ResponsiveContainer width="100%" height="100%">

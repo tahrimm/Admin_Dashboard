@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LineChart, ResponsiveContainer,Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
-const LineChartComponent = ({ isCustomLineColors = false, isDashboard = false }) => {
+const LineChartComponent = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -10,7 +10,7 @@ const LineChartComponent = ({ isCustomLineColors = false, isDashboard = false })
 
     const fetchDataFromAPI = async () => {
         try {
-            const response = await fetch("http://localhost:5001/api/users");
+            const response = await fetch("https://admin-dashboard-backend-1sc0.onrender.com/api/users");
             const jsonData = await response.json();
             processData(jsonData);
         } catch (error) {
@@ -54,7 +54,7 @@ const LineChartComponent = ({ isCustomLineColors = false, isDashboard = false })
       </LineChart>
   </ResponsiveContainer>
     ) : (
-        <div>Loading...</div>
+        <div><br /> Loading...</div>
     );
 };
 

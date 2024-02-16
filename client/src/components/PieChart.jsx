@@ -12,7 +12,7 @@ const PieChartComponent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/users');
+      const response = await fetch('https://admin-dashboard-backend-1sc0.onrender.com/api/users');
       const responseData = await response.json();
       setData(responseData);
       setLoading(false);
@@ -51,7 +51,7 @@ const PieChartComponent = () => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']; // you can add more colors if needed
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><br /> Loading...</div>;
   }
 
   if (error) {

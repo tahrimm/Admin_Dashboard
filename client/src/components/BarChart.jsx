@@ -1,17 +1,13 @@
-import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
-import { tokens } from "../theme";
 import { useState, useEffect } from "react";
 
 const BarChart = ({ isDashboard = false }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/users");
+        const response = await fetch("https://admin-dashboard-backend-1sc0.onrender.com/api/users");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
